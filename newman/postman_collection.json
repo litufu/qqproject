@@ -1,0 +1,87 @@
+{
+	"info": {
+		"_postman_id": "0fa20727-9880-4a67-be7c-a7c4e31bfb91",
+		"name": "new",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "find",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded; charset=UTF-8",
+						"type": "text"
+					},
+					{
+						"key": "Host",
+						"value": "cgi.find.qq.com",
+						"type": "text"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json, text/javascript, */*; q=0.01",
+						"type": "text"
+					},
+					{
+						"key": "Origin",
+						"value": "http://find.qq.com",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) QQ/9.1.1.24953 Chrome/43.0.2357.134 Safari/537.36 QBCore/3.43.1019.400 QQBrowser/9.0.2524.400",
+						"type": "text"
+					},
+					{
+						"key": "Referer",
+						"value": "http://find.qq.com/index.html?version=1&im_version=5623&width=910&height=610&search_target=0",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.8",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": "RK=/rKpUR8tyh; ptisp=cm; ptcz=8557791147b790129d7d857b9b46ea4badcf992afb6e933280055585e99ab338; pgv_info=ssid=s3879612776; pgv_pvid=369136925; uin=o3468350745; skey=ZvljpLjkZ8; itkn=2073906253",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "num=20&page=7&sessionid=1&keyword=&agerg=0&sex=0&firston=1&video=0&country=1&province=11&city=29&district=0&hcountry=1&hprovince=0&hcity=0&hdistrict=0&online=1&cnt=20&ldw=1761669646"
+				},
+				"url": {
+					"raw": "http://cgi.find.qq.com/qqfind/buddy/search_v3",
+					"protocol": "http",
+					"host": [
+						"cgi",
+						"find",
+						"qq",
+						"com"
+					],
+					"path": [
+						"qqfind",
+						"buddy",
+						"search_v3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

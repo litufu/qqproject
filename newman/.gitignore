@@ -1,0 +1,9 @@
+# Node
+node_modules/**/*
+npm-debug.*
+yarn-error.log
+__test__
+*.jks
+*.p12
+*.key
+*.mobileprovision
