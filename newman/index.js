@@ -105,7 +105,7 @@ async function get_html() {
 		for(const city of province.cities){
 			console.log(city.name)
 			for (let i = 0; i < 10; i++) {
-				let raw = `num=20&page=${i}&sessionid=0&keyword=&agerg=0&sex=0&firston=1&video=0&country=1&province=${province.code}&city=${city.code}&district=0&hcountry=1&hprovince=0&hcity=0&hdistrict=0&online=1&ldw=669513276`
+				let raw = `num=20&page=${i}&sessionid=0&keyword=&agerg=12&sex=0&firston=1&video=0&country=1&province=${province.code}&city=${city.code}&district=0&hcountry=1&hprovince=0&hcity=0&hdistrict=0&online=1&ldw=669513276`
 				myCollection.item[0].request.body.raw = raw
 				console.log(raw)
 				// call newman.run to pass `options` object and wait for callback
@@ -124,9 +124,7 @@ async function get_html() {
 	await sleep(60000);
 }
 
-while(true){
-	get_html()
-}
+get_html()
 
 
 

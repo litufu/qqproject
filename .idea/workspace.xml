@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed5ed894-9d5c-4ad9-89de-f6a0f73aadba" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/qqbot/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newman/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/newman/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qqbot/2837484507.txt" beforeDir="false" afterPath="$PROJECT_DIR$/qqbot/2837484507.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qqbot/reply_say.py" beforeDir="false" afterPath="$PROJECT_DIR$/qqbot/reply_say.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newman/newman/new-2019-05-28-06-47-02-123-0.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/newman/newman/new-2019-05-28-06-47-02-181-0.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/newman/newman/new-2019-05-28-06-47-04-761-0.html" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,13 +51,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="9" />
-          <entry key="js" value="421" />
+          <entry key="js" value="425" />
           <entry key="py" value="2285" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="421" />
+          <entry key="JavaScript" value="425" />
           <entry key="PLAIN_TEXT" value="9" />
           <entry key="Python" value="2285" />
         </counts>
@@ -73,8 +72,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/newman/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="129" lean-forward="true" selection-start-line="129" selection-end-line="129" />
+            <state relative-caret-position="161">
+              <caret line="94" column="91" selection-start-line="94" selection-start-column="91" selection-end-line="94" selection-end-column="91" />
             </state>
           </provider>
         </entry>
@@ -520,7 +519,7 @@
       <path value="$PROJECT_DIR$/newman/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
     <option name="width" value="980" />
@@ -542,12 +541,6 @@
             <path>
               <item name="qqproject" type="b2602c69:ProjectViewProjectNode" />
               <item name="qqproject" type="462c0819:PsiDirectoryNode" />
-              <item name="newman" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qqproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qqproject" type="462c0819:PsiDirectoryNode" />
-              <item name="newman" type="462c0819:PsiDirectoryNode" />
               <item name="newman" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -729,7 +722,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" sideWeight="0.5010571" side_tool="true" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4989429" visible="true" weight="0.25" />
@@ -738,11 +730,11 @@
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" weight="0.32907802" />
       <window_info anchor="bottom" id="Python Console" weight="0.32907802" />
-      <window_info anchor="bottom" id="Terminal" weight="0.32907802" />
+      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.32907802" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32907802" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32907802" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32907802" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -965,8 +957,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/newman/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="129" lean-forward="true" selection-start-line="129" selection-end-line="129" />
+        <state relative-caret-position="161">
+          <caret line="94" column="91" selection-start-line="94" selection-start-column="91" selection-end-line="94" selection-end-column="91" />
         </state>
       </provider>
     </entry>

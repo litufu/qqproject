@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Newman Summary Report</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet prefetch" href='https://use.fontawesome.com/releases/v5.0.10/css/all.css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github-gist.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.css"/>
+
+<style>
+body {
+  padding-top:30px;
+}
+
+body, html {
+  height:100%;
+}
+
+.badge-outline-success {
+    color: #27ae60;
+    border: 1px solid #27ae60;
+    background-color: transparent;
+}
+
+.badge-outline {
+    color: #040411;
+    border: 1px solid #040411;
+    background-color: transparent;
+}
+
+.card {
+    overflow:hidden;
+}
+
+.card-body .rotate {
+    z-index: 8;
+    float: right;
+    height: 100%;
+}
+
+.card-body .rotate i {
+    color: rgba(20, 20, 20, 0.15);
+    position: absolute;
+    left: 0;
+    left: auto;
+    right: -10px;
+    bottom: 0;
+    display: block;
+    -webkit-transform: rotate(-44deg);
+    -moz-transform: rotate(-44deg);
+    -o-transform: rotate(-44deg);
+    -ms-transform: rotate(-44deg);
+    transform: rotate(-44deg);
+}
+.dyn-height {
+    max-height:350px;
+    overflow-y:auto;
+}
+
+.nav-pills .nav-link.active {
+    background-color: transparent!important;
+}
+
+#topOfScreen {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  outline: none;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#topOfScreen:hover {
+  background-color: #28a745;
+}
+
+.custom-tab {
+    padding: 10px 15px;
+    margin-right: 3px;
+    border: solid 1px #fff;
+    border-bottom: none;
+    cursor:pointer;
+}
+.custom-tab .active {
+    border-bottom:solid 1px #032a33;
+}
+
+#execution-data {
+    padding: 10px;
+    border: solid 1px #fff;
+    border-top: none;
+}
+
+.card-header .fa {
+  transition: .3s transform ease-in-out;
+}
+.card-header .collapsed .fa {
+  transform: rotate(90deg);
+}
+
+</style>
+</head>
+<body>
+  <div class="container">
+        <div class="card">
+        <div class="card-header">
+            <ul class="nav nav-pills mb-3 nav-justified" id="pills-tab" role="tablist">
+            <li class="nav-item bg-info active" data-toggle="tooltip" title="Click to view the Summary">
+                <a class="nav-link text-white" id="pills-summary-tab" data-toggle="pill" href="#pills-summary" role="tab" aria-controls="pills-summary" aria-selected="true">Summary</a>
+            </li>
+            <li class="nav-item bg-success" data-toggle="tooltip" title="Click to view the Requests">
+                <a class="nav-link text-white" id="pills-requests-tab" data-toggle="pill" href="#pills-requests" role="tab" aria-controls="pills-requests" aria-selected="false">Total Requests <span class="badge badge-light">1</span></a>
+            </li>
+            <li class="nav-item bg-danger" data-toggle="tooltip" title="Click to view the Failed Tests">
+                <a class="nav-link text-white" id="pills-failed-tab" data-toggle="pill" href="#pills-failed" role="tab" aria-controls="pills-failed" aria-selected="false">Failed Tests <span class="badge badge-light">0</span></a>
+            </li>
+            <li class="nav-item bg-warning" data-toggle="tooltip" title="Click to view the Skipped Tests">
+                <a class="nav-link text-white" id="pills-skipped-tab" data-toggle="pill" href="#pills-skipped" role="tab" aria-controls="pills-skipped" aria-selected="false">Skipped Tests <span class="badge badge-light">0</span></a>
+            </li>
+            </ul>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-summary" role="tabcard" aria-labelledby="pills-summary-tab"> 
+<div class="row">
+  <div class="col-md-9 col-lg-12 main">
+   <h1 class="display-2 text-center">Newman Run Dashboard</h1>
+   <h4 class="text-center">Tuesday, 28 May 2019 15:19:28</h4>
+   <div class="row">
+    <div class="col-lg-3 col-md-6">
+     <div class="card text-white card-success">
+      <div class="card-body bg-success">
+       <div class="rotate">
+        <i class="fa fa-retweet fa-5x"></i>
+       </div>
+       <h6 class="text-uppercase">Total Iterations</h6>
+       <h1 class="display-1">1</h1>
+      </div>
+     </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+     <div class="card text-white card-danger">
+      <div class="card-body bg-success">
+       <div class="rotate">
+        <i class="fa fa-list fa-4x"></i>
+       </div>
+       <h6 class="text-uppercase">Total Assertions</h6>
+       <h1 class="display-1">0</h1>
+      </div>
+     </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+     <div class="card text-white card-info">
+      <div class="card-body bg-success">
+       <div class="rotate">
+        <i class="fa fa-plus-circle fa-5x"></i>
+       </div>
+       <h6 class="text-uppercase">Total Failed Tests</h6>
+       <h1 class="display-1">0</h1>
+      </div>
+     </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+     <div class="card text-white card-warning">
+      <div class="card-body bg-success">
+       <div class="rotate">
+        <i class="fa fa-share fa-5x"></i>
+       </div>
+       <h6 class="text-uppercase">Total Skipped Tests</h6>
+       <h1 class="display-1">0</h1>
+      </div>
+     </div>
+    </div>
+   </div>
+   <hr>
+    <div class="row">
+    <div class="col">
+        <div class="row">
+        <div class="col-sm-12 mb-3">
+            <div class="card border-info">
+                <div class="card-body">
+                <h5 class="card-title text-uppercase text-white text-center bg-info">File Information</h5>
+                <span><i class="fas fa-file-code"></i></span><strong> Collection:</strong> new<br>
+                
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-sm-12 mb-3">
+            <div class="card border-info">
+                <div class="card-body">
+                <h5 class="card-title text-uppercase text-white text-center bg-info">Timings and Data</h5>
+                <span><i class="fas fa-stopwatch"></i></span><strong> Total run duration:</strong> 244ms<br>
+                <span><i class="fas fa-database"></i></span><strong> Total data received:</strong> 6.16KB<br>
+                <span><i class="fas fa-stopwatch"></i></span><strong> Average response time:</strong> 231ms<br>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-sm-12 mb-3">
+            <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead class="thead-inverse">
+                    <tr class="text-center">
+                        <th class="text-uppercase">Summary Item</th>
+                        <th class="text-uppercase">Total</th>
+                        <th class="text-uppercase">Failed</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Requests</td>
+                        <td class="text-center">1</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr>
+                        <td>Prerequest Scripts</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr>
+                        <td>Test Scripts</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr class="">
+                        <td>Assertions</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">0</td>
+                    </tr>
+                    <tr class="">
+                        <td>Skipped Tests</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">-</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+        </div>
+    <hr>
+   </div>
+   </div>
+  </div>
+ </div>
+        </div>
+            <div class="tab-pane fade" id="pills-failed" role="tabcard" aria-labelledby="pills-failed-tab">
+
+                <div class="alert alert-success text-uppercase text-center">
+                     <br><br><h1 class="text-center">There are no failed tests <span><i class="far fa-thumbs-up"></i></span></h1><br><br>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="pills-skipped" role="tabcard" aria-labelledby="pills-skipped-tab">
+
+                <div class="alert alert-success text-uppercase text-center">
+                    <br><br><h1 class="text-center">There are no skipped tests <span><i class="far fa-thumbs-up"></i></span></h1><br><br>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="pills-logs" role="tabcard" aria-labelledby="pills-logs-tab">
+
+            </div> 
+            <div class="tab-pane fade" id="pills-requests" role="tabcard" aria-labelledby="pills-requests-tab">
+            
+            <button class="btn btn-outline-success btn-sm" onclick="topFunction()" id="topOfScreen">Go To Top</button>
+            
+    <div class="text-uppercase" id="execution-menu">
+        <h6>1 Iteration available to view</h6>
+        <nav class="table-responsive">
+        <ul class="nav nav-tabs">
+        </ul>
+        </nav>
+    </div>
+	<div class="tab-content" id="execution-data">
+            <div id="folder-076fc145-2be0-4881-bf24-fbce623bc308" class="card-deck iteration-0">
+            <div class="row iteration-0">
+                <div class="col-sm-12 mb-3 iteration-0">
+                <div class="card iteration-0">
+                    <div class="card-header  bg-success iteration-0">
+                        <a data-toggle="collapse" href="#" data-target="#collapse-076fc145-2be0-4881-bf24-fbce623bc308" aria-expanded="false" aria-controls="collapse" id="requests-076fc145-2be0-4881-bf24-fbce623bc308" class="collapsed text-white z-block">
+                    Iteration: 1 - find <i class="float-lg-right fa fa-chevron-down"></i>
+                </a>
+                    </div>
+                    <div id="collapse-076fc145-2be0-4881-bf24-fbce623bc308" class="collapse" aria-labelledby="requests-076fc145-2be0-4881-bf24-fbce623bc308">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-12 mb-3">
+                                <div class="card-deck">
+                                <div class="card border-info" style="width: 50rem;">
+                                    <div class="card-body">
+                                    <h5 class="card-title text-uppercase text-white text-center bg-info">Request Information</h5>
+                                    <span><i class="fas fa-info-circle"></i></span><strong> Request Method:</strong> <span class="badge-outline-success badge badge-success"> POST</span><br>
+                                    <span><i class="fas fa-info-circle"></i></span><strong> Request URL:</strong> <a href="http://cgi.find.qq.com/qqfind/buddy/search_v3" target="_blank">http://cgi.find.qq.com/qqfind/buddy/search_v3</a><br>
+                                    </div>
+                                </div>
+                                <div class="card border-info" style="width: 50rem;">
+                                    <div class="card-body">
+                                    <h5 class="card-title text-uppercase text-white text-center bg-info">Response Information</h5>
+                                    <span><i class="fas fa-info-circle"></i></span><strong> Response Code:</strong> <span class="float-right badge-outline badge badge-success"> 200 - OK</span><br>
+                                    <span><i class="fas fa-stopwatch"></i></span><strong> Mean time per request:</strong> <span class="float-right badge-outline badge badge-success"> 231ms</span><br>
+                                    <span><i class="fas fa-database"></i></span><strong> Mean size per request:</strong> <span class="float-right badge-outline badge badge-success"> 6.16KB</span><br>
+                                    <hr>
+                                    <h5 class="card-title text-uppercase text-white text-center bg-info">Test Pass Percentage</h5>
+                                    <div>
+                                        <div class="progress" style="height: 40px;">
+                                            <div class="progress-bar  bg-success" style="width: 100%" role="progressbar">
+                                            <h5><strong>0 %</strong></h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 mb-3">
+                                <div class="card-deck">
+                                <div class="card border-info" style="width: 50rem;">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-uppercase text-white text-center bg-info">Request Headers</h5>
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered">
+                                            <thead class="thead-light text-center"><tr><th>Header Name</th><th>Header Value</th></tr></thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="text-nowrap">Content-Type</td>
+                                                        <td>application/x-www-form-urlencoded; charset&#x3D;UTF-8</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-nowrap">Host</td>
+                                                        <td>cgi.find.qq.com</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-nowrap">Connection</td>
+                                                        <td>keep-alive</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-nowrap">Accept</td>
+                                                        <td>application/json, text/javascript, */*; q&#x3D;0.01</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-nowrap">Origin</td>
+                                                        <td>http://find.qq.com</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-nowrap">User-Agent</td>
+                                                        <td>Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) QQ/9.1.1.24953 Chrome/43.0.2357.134 Safari/537.36 QBCore/3.43.1019.400 QQBrowser/9.0.2524.400</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-nowrap">Referer</td>
+                                                        <td>http://find.qq.com/index.html?version&#x3D;1&amp;im_version&#x3D;5623&amp;width&#x3D;910&amp;height&#x3D;610&amp;search_target&#x3D;0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-nowrap">Accept-Encoding</td>
+                                                        <td>gzip, deflate</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-nowrap">Accept-Language</td>
+                                                        <td>en-US,en;q&#x3D;0.8</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-nowrap">Cookie</td>
+                                                        <td>RK&#x3D;/rKpUR8tyh; ts_uid&#x3D;5007439680; ptcz&#x3D;8557791147b790129d7d857b9b46ea4badcf992afb6e933280055585e99ab338; pgv_pvid&#x3D;369136925; uin&#x3D;o3468350745; skey&#x3D;ZrGagOP3vT; itkn&#x3D;2073906251</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-nowrap">Cache-Control</td>
+                                                        <td>no-cache</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-nowrap">Postman-Token</td>
+                                                        <td>bd628253-c944-43c6-8a71-b26015067121</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-nowrap">content-length</td>
+                                                        <td>174</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="row">
+                        <div class="col-sm-12 mb-3">
+                            <div class="card-deck">
+                            <div class="card border-info" style="width: 50rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title text-uppercase text-white text-center bg-info">Request Body</h5>
+                                        <div class="dyn-height">
+                                            <pre><code>num&#x3D;20&amp;page&#x3D;2&amp;sessionid&#x3D;0&amp;keyword&#x3D;&amp;agerg&#x3D;12&amp;sex&#x3D;0&amp;firston&#x3D;1&amp;video&#x3D;0&amp;country&#x3D;1&amp;province&#x3D;34&amp;city&#x3D;12&amp;district&#x3D;0&amp;hcountry&#x3D;1&amp;hprovince&#x3D;0&amp;hcity&#x3D;0&amp;hdistrict&#x3D;0&amp;online&#x3D;1&amp;ldw&#x3D;669513276</code></pre>
+                                        </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="row">
+                        <div class="col-sm-12 mb-3">
+                            <div class="card-deck">
+                            <div class="card border-info" style="width: 50rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title text-uppercase text-white text-center bg-info">Response Headers</h5>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                        <thead class="thead-light text-center"><tr><th>Header Name</th><th>Header Value</th></tr></thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-nowrap">Server</td>
+                                                    <td>tws</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Date</td>
+                                                    <td>Tue, 28 May 2019 07:19:27 GMT</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Content-Type</td>
+                                                    <td>application/json;charset&#x3D;utf-8</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Transfer-Encoding</td>
+                                                    <td>chunked</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Connection</td>
+                                                    <td>close</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Set-Cookie</td>
+                                                    <td>traceid&#x3D;7bf452e911; domain&#x3D;.cgi.find.qq.com; path&#x3D;/; secure</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Access-Control-Allow-Origin</td>
+                                                    <td>http://find.qq.com</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Access-Control-Allow-Credentials</td>
+                                                    <td>true</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Content-Encoding</td>
+                                                    <td>gzip</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Vary</td>
+                                                    <td>Accept-Encoding</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="row">
+                        <div class="col-sm-12 mb-3">
+                            <div class="card-deck">
+                            <div class="card border-info" style="width: 50rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title text-uppercase text-white text-center bg-info">Response Body</h5>
+                                        <div class="dyn-height">
+                                                <pre><code id="copyText-8e9a2c00-9c7b-4c39-a736-cdca20648fd8" class="prettyPrint">{&quot;retcode&quot;:0,&quot;result&quot;:{&quot;buddy&quot;:{&quot;count&quot;:20,&quot;page&quot;:3,&quot;info_list&quot;:[{&quot;face&quot;:0,&quot;distance&quot;:0,&quot;nick&quot;:&quot;Agoni&quot;,&quot;token&quot;:&quot;4HcWQeOFmXl7eqeRK+CzbY0+n6leQNVv/k5uRETEPhg&#x3D;&quot;,&quot;age&quot;:19,&quot;province&quot;:&quot;安徽&quot;,&quot;gender&quot;:1,&quot;uin&quot;:2530917484,&quot;url&quot;:&quot;http://thirdqq.qlogo.cn/g?b&#x3D;sdk\u0026k&#x3D;qSqdjq1ucuH1yNkyWBEcvA\u0026s&#x3D;100\u0026t&#x3D;1557510902&quot;,&quot;stat&quot;:1,&quot;country&quot;:&quot;中国&quot;,&quot;city&quot;:&quot;阜阳&quot;},{&quot;face&quot;:0,&quot;distance&quot;:0,&quot;nick&quot;:&quot;野草&quot;,&quot;token&quot;:&quot;62wVDFZ+3NgdqeIHw92W81G9BFMyhDetbeWGzvDLNMQ&#x3D;&quot;,&quot;age&quot;:18,&quot;province&quot;:&quot;安徽&quot;,&quot;gender&quot;:1,&quot;uin&quot;:627174252,&quot;url&quot;:&quot;http://thirdqq.qlogo.cn/g?b&#x3D;sdk\u0026k&#x3D;AWGLZxSPUZIJx7za0C6y6w\u0026s&#x3D;100\u0026t&#x3D;1552034953&quot;,&quot;stat&quot;:1,&quot;country&quot;:&quot;中国&quot;,&quot;city&quot;:&quot;阜阳&quot;},{&quot;face&quot;:0,&quot;distance&quot;:0,&quot;nick&quot;:&quot;杺瘾╬&quot;,&quot;token&quot;:&quot;Yi2cL23/yugc7d5mq8O1GtwDYimPI+k3BtjYw8xgtwk&#x3D;&quot;,&quot;age&quot;:19,&quot;province&quot;:&quot;安徽&quot;,&quot;gender&quot;:1,&quot;uin&quot;:3219259757,&quot;url&quot;:&quot;http://thirdqq.qlogo.cn/g?b&#x3D;sdk\u0026k&#x3D;eu85onTFicxGnX953sicDshQ\u0026s&#x3D;100\u0026t&#x3D;1557914068&quot;,&quot;stat&quot;:1,&quot;country&quot;:&quot;中国&quot;,&quot;city&quot;:&quot;阜阳&quot;},{&quot;face&quot;:0,&quot;distance&quot;:0,&quot;nick&quot;:&quot;黑夜的夜&quot;,&quot;token&quot;:&quot;XXWnzLDUpGgJsp0jVtga6suoppC3TuLEUMUChw+9INc&#x3D;&quot;,&quot;age&quot;:22,&quot;province&quot;:&quot;安徽&quot;,&quot;gender&quot;:1,&quot;uin&quot;:3168144237,&quot;url&quot;:&quot;http://thirdqq.qlogo.cn/g?b&#x3D;sdk\u0026k&#x3D;Gc16QfZzRnJU7p2aalEVJQ\u0026s&#x3D;100\u0026t&#x3D;1558021752&quot;,&quot;stat&quot;:1,&quot;country&quot;:&quot;中国&quot;,&quot;city&quot;:&quot;阜阳&quot;},{&quot;face&quot;:0,&quot;distance&quot;:0,&quot;nick&quot;:&quot;✎﹏₯㎕ 千泷&quot;,&quot;token&quot;:&quot;P4nwnN4qS/n7xD2WaCXTA15BsG3Kt2lHd9AQAE9W5Us&#x3D;&quot;,&quot;age&quot;:20,&quot;province&quot;:&quot;安徽&quot;,&quot;gender&quot;:1,&quot;uin&quot;:2609007981,&quot;url&quot;:&quot;http://thirdqq.qlogo.cn/g?b&#x3D;sdk\u0026k&#x3D;0hrAcqS5ozibxj12cUTibVYw\u0026s&#x3D;100\u0026t&#x3D;1557061135&quot;,&quot;stat&quot;:1,&quot;country&quot;:&quot;中国&quot;,&quot;city&quot;:&quot;阜阳&quot;},{&quot;face&quot;:0,&quot;distance&quot;:0,&quot;nick&quot;:&quot;Bilibili^ω^乾杯&quot;,&quot;token&quot;:&quot;VgPkbzEhykDI4FTfmtV1XDx8gMLLJW1XVilS6qL7XT0&#x3D;&quot;,&quot;age&quot;:21,&quot;province&quot;:&quot;安徽&quot;,&quot;gender&quot;:1,&quot;uin&quot;:954106989,&quot;url&quot;:&quot;http://thirdqq.qlogo.cn/g?b&#x3D;sdk\u0026k&#x3D;OP6YOw2nuIHXwicSpScYu9A\u0026s&#x3D;100\u0026t&#x3D;1554996127&quot;,&quot;stat&quot;:1,&quot;country&quot;:&quot;中国&quot;,&quot;city&quot;:&quot;阜阳&quot;},{&quot;face&quot;:0,&quot;distance&quot;:0,&quot;nick&quot;:&quot;孤独患者&quot;,&quot;token&quot;:&quot;y7CKDRnUzsoFTI6hfwXUEEvuGJ/p2IfOe6vYho0/PSk&#x3D;&quot;,&quot;age&quot;:21,&quot;province&quot;:&quot;安徽&quot;,&quot;gender&quot;:1,&quot;uin&quot;:2658249325,&quot;url&quot;:&quot;http://thirdqq.qlogo.cn/g?b&#x3D;sdk\u0026k&#x3D;apeXKicw0TeWbfEUpmQRTIQ\u0026s&#x3D;100\u0026t&#x3D;1556977563&quot;,&quot;stat&quot;:1,&quot;country&quot;:&quot;中国&quot;,&quot;city&quot;:&quot;阜阳&quot;},{&quot;face&quot;:0,&quot;distance&quot;:0,&quot;nick&quot;:&quot;目分&quot;,&quot;token&quot;:&quot;+HJ9sD06ee+PiycP9yuLmukuXRKqj0EIbSh6G7mabwE&#x3D;&quot;,&quot;age&quot;:19,&quot;province&quot;:&quot;安徽&quot;,&quot;gender&quot;:1,&quot;uin&quot;:2921585773,&quot;url&quot;:&quot;http://thirdqq.qlogo.cn/g?b&#x3D;sdk\u0026k&#x3D;ANCG8UHxA4zXn1AnZVOibQA\u0026s&#x3D;100\u0026t&#x3D;1557453086&quot;,&quot;stat&quot;:1,&quot;country&quot;:&quot;中国&quot;,&quot;city&quot;:&quot;阜阳&quot;},{&quot;face&quot;:0,&quot;uin&quot;:1553400942,&quot;stat&quot;:1,&quot;url&quot;:&quot;http://thirdqq.qlogo.cn/g?b&#x3D;sdk\u0026k&#x3D;Pk9xCdrNUSmJkXx5ic69lfg\u0026s&#x3D;100\u0026t&#x3D;1557053687&quot;,&quot;city&quot;:&quot;阜阳&quot;,&quot;country&quot;:&quot;中国&quot;,&quot;distance&quot;:0,&quot;nick&quot;:&quot;Mr.姜&quot;,&quot;token&quot;:&quot;UNEJZRN9uvzwcAPT+ijk8DuHgnQeO7PUHL4YWSFQzx4&#x3D;&quot;,&quot;age&quot;:21,&quot;province&quot;:&quot;安徽&quot;,&quot;gender&quot;:1,&quot;wpa_ck&quot;:&quot;tencent://message/?Menu&#x3D;yes\u0026uin&#x3D;1553400942\u0026Site&#x3D;qq\u0026Service&#x3D;201\u0026SigT&#x3D;dce65927af217659be5bb395623146def964f779d109f6924dc6065b863be011a737c8c7d7659136eb4658278578492e\u0026SigU&#x3D;decab7f5d0081eaac4d9e976dc0cdff9aa542c6af83a7d39397a2879b5c86744ae018062d41d31e4&quot;},{&quot;face&quot;:0,&quot;distance&quot;:0,&quot;nick&quot;:&quot;从良&quot;,&quot;token&quot;:&quot;vXd83+B/3me1Hf9pA/BjzNDYtUhsz5HCw6/KKw1v5CI&#x3D;&quot;,&quot;age&quot;:18,&quot;province&quot;:&quot;安徽&quot;,&quot;gender&quot;:1,&quot;uin&quot;:1830039150,&quot;url&quot;:&quot;http://thirdqq.qlogo.cn/g?b&#x3D;sdk\u0026k&#x3D;wduFHQ31iaeZvvyxpF3kP7g\u0026s&#x3D;100\u0026t&#x3D;1558815260&quot;,&quot;stat&quot;:1,&quot;country&quot;:&quot;中国&quot;,&quot;city&quot;:&quot;阜阳&quot;},{&quot;face&quot;:0,&quot;distance&quot;:0,&quot;nick&quot;:&quot;周金刚查件&quot;,&quot;token&quot;:&quot;FCdNlko37KBG+cJSrqTPFOrGtQaXDB29ClPLLaEQpsg&#x3D;&quot;,&quot;age&quot;:20,&quot;province&quot;:&quot;安徽&quot;,&quot;gender&quot;:2,&quot;uin&quot;:372032366,&quot;url&quot;:&quot;http://thirdqq.qlogo.cn/g?b&#x3D;sdk\u0026k&#x3D;7KIFoPY07eTS4Z3yfTAljQ\u0026s&#x3D;100\u0026t&#x3D;1556359890&quot;,&quot;stat&quot;:1,&quot;country&quot;:&quot;中国&quot;,&quot;city&quot;:&quot;阜阳&quot;},{&quot;face&quot;:0,&quot;distance&quot;:0,&quot;nick&quot;:&quot;Gokou Ruri&quot;,&quot;token&quot;:&quot;REQYUGIg4FxafME+VpeIIb8s4bnlsQ28Mi3Chl2wndw&#x3D;&quot;,&quot;age&quot;:21,&quot;province&quot;:&quot;安徽&quot;,&quot;gender&quot;:1,&quot;uin&quot;:2545534574,&quot;url&quot;:&quot;http://thirdqq.qlogo.cn/g?b&#x3D;sdk\u0026k&#x3D;EuRgvMRSuIMVQ7Jn5OSichA\u0026s&#x3D;100\u0026t&#x3D;1553967558&quot;,&quot;stat&quot;:1,&quot;country&quot;:&quot;中国&quot;,&quot;city&quot;:&quot;阜阳&quot;},{&quot;face&quot;:0,&quot;distance&quot;:0,&quot;nick&quot;:&quot;执念成殇&quot;,&quot;token&quot;:&quot;747q4aXcsDdmaiWEhLZyy7BVB7+5lNLT3fHnj7MpyV0&#x3D;&quot;,&quot;age&quot;:20,&quot;province&quot;:&quot;安徽&quot;,&quot;gender&quot;:1,&quot;uin&quot;:2463604334,&quot;url&quot;:&quot;http://thirdqq.qlogo.cn/g?b&#x3D;sdk\u0026k&#x3D;AGHauZNOn6rJlsicuHp1J0g\u0026s&#x3D;100\u0026t&#x3D;1557206796&quot;,&quot;stat&quot;:1,&quot;country&quot;:&quot;中国&quot;,&quot;city&quot;:&quot;阜阳&quot;},{&quot;face&quot;:0,&quot;distance&quot;:0,&quot;nick&quot;:&quot;旧颜虐心&quot;,&quot;token&quot;:&quot;YlBDFnCrnFE8Ck7B5oUIyxwAPyxnc1+8+A1gKhyYuN8&#x3D;&quot;,&quot;age&quot;:19,&quot;province&quot;:&quot;安徽&quot;,&quot;gender&quot;:1,&quot;uin&quot;:1464119662,&quot;url&quot;:&quot;http://thirdqq.qlogo.cn/g?b&#x3D;sdk\u0026k&#x3D;p7ICK6VmNl2MaGibHsFDKeA\u0026s&#x3D;100\u0026t&#x3D;1557531020&quot;,&quot;stat&quot;:1,&quot;country&quot;:&quot;中国&quot;,&quot;city&quot;:&quot;阜阳&quot;},{&quot;face&quot;:0,&quot;distance&quot;:0,&quot;nick&quot;:&quot;卢老爷&quot;,&quot;token&quot;:&quot;eWHvBOdWGg1mZ8b9cyP1Tox3IDfw4+WxW/obfKG5+Zk&#x3D;&quot;,&quot;age&quot;:18,&quot;province&quot;:&quot;安徽&quot;,&quot;gender&quot;:1,&quot;uin&quot;:792397167,&quot;url&quot;:&quot;http://thirdqq.qlogo.cn/g?b&#x3D;sdk\u0026k&#x3D;WZ5RcOJRUTuZDCicrxAicRxg\u0026s&#x3D;100\u0026t&#x3D;1555487629&quot;,&quot;stat&quot;:1,&quot;country&quot;:&quot;中国&quot;,&quot;city&quot;:&quot;阜阳&quot;},{&quot;face&quot;:0,&quot;distance&quot;:0,&quot;nick&quot;:&quot;阜阳万信工程师于&quot;,&quot;token&quot;:&quot;+U567+luSuZ4aKBfp98bVoa6SL4KaVU/BDyuUVTo3DA&#x3D;&quot;,&quot;age&quot;:21,&quot;province&quot;:&quot;安徽&quot;,&quot;gender&quot;:1,&quot;uin&quot;:2974034799,&quot;url&quot;:&quot;http://thirdqq.qlogo.cn/g?b&#x3D;sdk\u0026k&#x3D;9NeALeKA0h7Y24Fes0DibUg\u0026s&#x3D;100\u0026t&#x3D;1556615518&quot;,&quot;stat&quot;:1,&quot;country&quot;:&quot;中国&quot;,&quot;city&quot;:&quot;阜阳&quot;},{&quot;face&quot;:0,&quot;distance&quot;:0,&quot;nick&quot;:&quot;.&quot;,&quot;token&quot;:&quot;VhVaygVRmksM16WVrl05GjTpcNhqNHbO7b6wgA4kO8A&#x3D;&quot;,&quot;age&quot;:22,&quot;province&quot;:&quot;安徽&quot;,&quot;gender&quot;:1,&quot;uin&quot;:540683375,&quot;url&quot;:&quot;http://thirdqq.qlogo.cn/g?b&#x3D;sdk\u0026k&#x3D;GnerkMXIstqXXtu7UNR2FA\u0026s&#x3D;100\u0026t&#x3D;1555895157&quot;,&quot;stat&quot;:1,&quot;country&quot;:&quot;中国&quot;,&quot;city&quot;:&quot;阜阳&quot;},{&quot;face&quot;:0,&quot;distance&quot;:0,&quot;nick&quot;:&quot;啊嗯奥&quot;,&quot;token&quot;:&quot;A/hhViIQgHrC1Al9Kd63eow/pgiznckYpglhs3B7eFI&#x3D;&quot;,&quot;age&quot;:22,&quot;province&quot;:&quot;安徽&quot;,&quot;gender&quot;:1,&quot;uin&quot;:925514095,&quot;url&quot;:&quot;http://thirdqq.qlogo.cn/g?b&#x3D;sdk\u0026k&#x3D;8icvWBHGc5gDMia8icIlxFS5A\u0026s&#x3D;100\u0026t&#x3D;1554958525&quot;,&quot;stat&quot;:1,&quot;country&quot;:&quot;中国&quot;,&quot;city&quot;:&quot;阜阳&quot;},{&quot;face&quot;:0,&quot;distance&quot;:0,&quot;nick&quot;:&quot;自渡.&quot;,&quot;token&quot;:&quot;Hu9vp6Aq7lJSqZelbzoVbFs+HHIpEzJgTtPWCsnbq1s&#x3D;&quot;,&quot;age&quot;:20,&quot;province&quot;:&quot;安徽&quot;,&quot;gender&quot;:1,&quot;uin&quot;:2295873135,&quot;url&quot;:&quot;http://thirdqq.qlogo.cn/g?b&#x3D;sdk\u0026k&#x3D;KscKDjrTk75Wzb7JoHIXFg\u0026s&#x3D;100\u0026t&#x3D;1557385086&quot;,&quot;stat&quot;:1,&quot;country&quot;:&quot;中国&quot;,&quot;city&quot;:&quot;阜阳&quot;},{&quot;face&quot;:0,&quot;distance&quot;:0,&quot;nick&quot;:&quot;Why&quot;,&quot;token&quot;:&quot;pyivQrs9LmFyKmPWcHEIaqxp5SIZbb/hJ6wkhdg3hG4&#x3D;&quot;,&quot;age&quot;:22,&quot;province&quot;:&quot;安徽&quot;,&quot;gender&quot;:1,&quot;uin&quot;:760758639,&quot;stat&quot;:1,&quot;country&quot;:&quot;中国&quot;,&quot;city&quot;:&quot;阜阳&quot;}],&quot;totalnum&quot;:18284,&quot;sessionid&quot;:1,&quot;online&quot;:1,&quot;endflag&quot;:0},&quot;sret&quot;:0}}</code></pre>
+                                        </div>
+                                        <div class="card-footer">
+                                            <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyText-8e9a2c00-9c7b-4c39-a736-cdca20648fd8">Copy to Clipboard</button>
+                                        </div>
+                                </div>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="card border-info">
+                                <div class="card-body">
+                                <h5 class="card-title text-uppercase text-white text-center bg-info">Test Information</h5>
+                                    <h5 class="alert alert-success text-uppercase text-center">No Tests for this request</h5>
+                                </div>
+                            </div>
+                        </div>           
+                    </div>
+                    </div>
+                </div>      
+                </div>
+            </div>
+            </div>   
+        </div>      
+    </div>
+    </div>
+    </div>
+</body>
+</html>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script>
+$(document).ready( function () {
+    $('#myTable-8e9a2c00-9c7b-4c39-a736-cdca20648fd8').DataTable({
+        "retrieve": true,
+        "paging": false,
+        "info": false
+    });
+});
+</script>
+
+<script>
+$(document).ready(function() {
+    $('[data-toggle="tooltip"]').tooltip({
+        trigger : 'hover'
+    })
+})
+</script>
+
+<script>
+    function isJSON(data) 
+{
+    var ret = true;
+    try {
+            JSON.parse(data);
+    }catch(e) {
+            ret = false;
+    }
+    return ret;
+}
+
+$(".prettyPrint").each(function () {        
+        var data = $(this).text();
+        // Verify whether data is JSON
+        if(isJSON(data))
+        {
+                obj = JSON.parse(data);
+                data = JSON.stringify(obj, null, 2);
+        }
+        $(this).text(data);
+});
+</script>
+
+
+<!-- Copy Response Body To Clipboard -->
+<script>
+    var clipboard = new ClipboardJS('.copyButton');
+    
+    clipboard.on('success', function(e) {        
+        e.clearSelection();
+        $(".copyButton").addClass("bg-success text-white")
+        e.trigger.textContent = '✔ Copied!';
+        window.setTimeout(function() {
+            $(".copyButton").removeClass("bg-success text-white")
+            e.trigger.textContent = 'Copy to Clipboard';
+        }, 2000);
+    });
+    clipboard.on('error', function(e) {
+        e.clearSelection();
+        $(".copyButton").addClass("bg-danger text-white")
+        e.trigger.textContent = '✗ Not Copied';
+        window.setTimeout(function() {
+            $(".copyButton").removeClass("bg-danger text-white")
+            e.trigger.textContent = 'Copy to Clipboard';
+        }, 2000);
+    });
+
+</script>
+
+<!-- Render the Description Markdown -->
+<script>
+    const remarkable = new Remarkable();
+    
+    const descriptions = document.querySelectorAll("#description");
+    descriptions.forEach(description => {
+        description.innerHTML = renderHtmlFromMarkdown(description.textContent);
+    });
+    function renderHtmlFromMarkdown(markdown) {
+        return remarkable.render(trim(markdown));
+    }
+    function trim(string) {
+        return string ? string.replace(/^ +| +$/gm, "") : string;
+    }
+</script>
+
+<script>
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("topOfScreen").style.display = "block";
+  } else {
+    document.getElementById("topOfScreen").style.display = "none";
+  }
+}
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+
+<script type="text/javascript">
+    "use strict";
+
+window.onload = function () {
+
+  // hides all blocks of response
+  var allItems = document.querySelectorAll('[class*=iteration-]');
+  allItems.forEach(function(elem){
+    elem.style.display = 'none';
+  });
+
+   
+  let totalIterations = 1;
+   
+
+  let menu = document.querySelector('#execution-menu .nav');
+
+  for(var i = 0; i < totalIterations; i++)
+  {
+    let li = document.createElement('li');
+    li.appendChild(document.createTextNode((i + 1)));
+    li.setAttribute('id', 'iteration-' + i);
+    li.classList.add("custom-tab");
+
+    li.addEventListener('click', function() {
+
+      let allItems = document.querySelectorAll('[class*=iteration-]');
+      allItems.forEach(function(elem) {
+        elem.style.display = 'none';
+      })
+
+      let allMenus = document.querySelectorAll('[id*=iteration-');
+      allMenus.forEach(function(elem){
+        elem.style.borderBottom = 'none';
+      })
+
+      this.style.borderBottom = 'solid 1px #032a33';
+
+      let items = document.querySelectorAll("." + this.id);
+      items.forEach(function(elem) {
+        elem.style.display = elem.style.display == 'block' ? 'none' : 'block';
+      })
+    });
+
+    menu.appendChild(li);
+  }
+
+    //shows first tab data
+  document.getElementById('iteration-0').click();
+}
+</script>
