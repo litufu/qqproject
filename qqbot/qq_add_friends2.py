@@ -36,11 +36,11 @@ def add_friend(qq):
     # 点击搜索
     find = get_point('find')
     pyautogui.click(*find)
-    time.sleep(3)
+    time.sleep(5)
     # 点击添加
     add = get_point('add')
     pyautogui.click(*add)
-    time.sleep(3)
+    time.sleep(5)
     # 输入发送的添加信息
     message = get_point('message')
     pyautogui.click(*message)
@@ -61,14 +61,15 @@ def add_friend(qq):
     clear = get_point('clear')
     pyautogui.click(*clear)
     time.sleep(1)
-    print('{}添加完成'.format(qq))
+
 
 
 if __name__ == '__main__':
     time.sleep(1)
     users = session.query(User).filter(User.add == False).all()
-    for user in users:
+    for user in users[-300:]:
         add_friend(user.qq)
-        user.add = True
-        session.commit
+        user.add = False
+        session.commit()
+        print('{}添加完成'.format(user.qq))
 

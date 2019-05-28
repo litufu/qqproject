@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62b3e261-0413-4cc8-9eb3-8cbb4c90ce57" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../newman/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reply_say.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orm.py" beforeDir="false" afterPath="$PROJECT_DIR$/orm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qq.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/qq.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qq_add_friends2.py" beforeDir="false" afterPath="$PROJECT_DIR$/qq_add_friends2.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,6 +63,7 @@
     <session id="198336654">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.29" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -89,8 +95,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/send_mail.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-375">
-              <caret line="102" column="46" selection-start-line="102" selection-start-column="46" selection-end-line="102" selection-end-column="46" />
+            <state relative-caret-position="675">
+              <caret line="135" column="16" selection-start-line="135" selection-end-line="136" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
                 <marker date="1558754632689" expanded="true" signature="1925:4091" ph="..." />
@@ -144,8 +150,8 @@
               <caret line="13" column="20" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="20" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
-                <marker date="1558592931974" expanded="true" signature="91:374" ph="..." />
-                <marker date="1558592931974" expanded="true" signature="514:680" ph="..." />
+                <marker date="1558966993460" expanded="true" signature="91:374" ph="..." />
+                <marker date="1558966993460" expanded="true" signature="514:680" ph="..." />
               </folding>
             </state>
           </provider>
@@ -200,7 +206,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
     <option name="width" value="980" />
@@ -387,15 +393,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12801608" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12801608" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32907802" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32907802" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -469,8 +474,8 @@
           <caret line="13" column="20" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="20" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
-            <marker date="1558592931974" expanded="true" signature="91:374" ph="..." />
-            <marker date="1558592931974" expanded="true" signature="514:680" ph="..." />
+            <marker date="1558966993460" expanded="true" signature="91:374" ph="..." />
+            <marker date="1558966993460" expanded="true" signature="514:680" ph="..." />
           </folding>
         </state>
       </provider>
@@ -507,8 +512,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/send_mail.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-375">
-          <caret line="102" column="46" selection-start-line="102" selection-start-column="46" selection-end-line="102" selection-end-column="46" />
+        <state relative-caret-position="675">
+          <caret line="135" column="16" selection-start-line="135" selection-end-line="136" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
             <marker date="1558754632689" expanded="true" signature="1925:4091" ph="..." />

@@ -23,17 +23,18 @@ def delete():
 
 def update():
     users = session.query(User).all()
+    users.reverse()
+
     for user in users:
-        if user.qq == "10603281":
+        if user.qq == "7420838":
             break
-        user.send = True
-        session.commit()
+        user.send = False
+    session.commit()
 
 
 if __name__ == '__main__':
-    # add()
-
     update()
+
 
 
 

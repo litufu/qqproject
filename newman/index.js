@@ -63,13 +63,14 @@ const myCollection = {
 					},
 					{
 						"key": "Cookie",
-						"value": "RK=/rKpUR8tyh; ptisp=cm; ptcz=8557791147b790129d7d857b9b46ea4badcf992afb6e933280055585e99ab338; pgv_info=ssid=s3879612776; pgv_pvid=369136925; uin=o3468350745; skey=ZvljpLjkZ8; itkn=2073906253",
+						"value": "RK=NLggbFQpz1; ts_uid=1136184560; ptcz=367cf5edb1e555ad22f1e55e247f802bf96718345132300a15da1242224cd11c; pgv_info=ssid=s4007286854; pgv_pvid=5305572534; uin=o2837484507; skey=Zz2ALH4kVY; itkn=2073906251",
+						// "value": "RK=/rKpUR8tyh; ptisp=cm; ptcz=8557791147b790129d7d857b9b46ea4badcf992afb6e933280055585e99ab338; pgv_info=ssid=s3879612776; pgv_pvid=369136925; uin=o3468350745; skey=ZvljpLjkZ8; itkn=2073906253",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "num=20&page=7&sessionid=1&keyword=&agerg=12&sex=0&firston=1&video=0&country=1&province=11&city=29&district=0&hcountry=1&hprovince=0&hcity=0&hdistrict=0&online=1&cnt=20&ldw=1761669646"
+					"raw": "num=20&page=0&sessionid=0&keyword=&agerg=12&sex=0&firston=1&video=0&country=1&province=0&city=0&district=0&hcountry=1&hprovince=0&hcity=0&hdistrict=0&online=1&ldw=194316974"
 				},
 				"url": {
 					"raw": "http://cgi.find.qq.com/qqfind/buddy/search_v3",
@@ -92,14 +93,29 @@ const myCollection = {
 	]
 }
 
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 
-// call newman.run to pass `options` object and wait for callback
-newman.run({
-    // collection: require('./postman_collection.json'),
-    collection: myCollection,
-    reporters: ['htmlextra'],
-}, function (err) {
-    if (err) { throw err; }
-    console.info('collection run complete!');
-});
+async function get_html() {
+  for (let i = 0; i < 500000; i++) {
+	let raw = `num=20&page=${i}&sessionid=0&keyword=&agerg=12&sex=0&firston=1&video=0&country=1&province=0&city=0&district=0&hcountry=1&hprovince=0&hcity=0&hdistrict=0&online=1&ldw=194316974`
+	myCollection.item[0].request.body.raw = raw
+    console.log(raw)
+	// call newman.run to pass `options` object and wait for callback
+	newman.run({
+		// collection: require('./postman_collection.json'),
+		collection: myCollection,
+		reporters: ['htmlextra'],
+	}, function (err) {
+		if (err) { throw err; }
+		console.info('collection run complete!');
+	});
+	await sleep(2000);
+ }
+}
+
+get_html()
+
+

@@ -2,7 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed5ed894-9d5c-4ad9-89de-f6a0f73aadba" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/newman/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qqbot/reply_say.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newman/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/newman/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newman/newman/new-2019-05-25-02-26-35-461-0.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qqbot/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/qqbot/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qqbot/get_response.py" beforeDir="false" afterPath="$PROJECT_DIR$/qqbot/get_response.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qqbot/next2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qqbot/orm.py" beforeDir="false" afterPath="$PROJECT_DIR$/qqbot/orm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qqbot/qq.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qqbot/qq.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/qqbot/qq.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qqbot/qq_add_friends2.py" beforeDir="false" afterPath="$PROJECT_DIR$/qqbot/qq_add_friends2.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,7 +22,10 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/qqproject$qq_add_friends2__1_.coverage" NAME="qq_add_friends2 (1) Coverage Results" MODIFIED="1558928898412" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/qqbot/add_qq_friends" />
-    <SUITE FILE_PATH="coverage/qqproject$qq_add_friends2__2_.coverage" NAME="qq_add_friends2 (2) Coverage Results" MODIFIED="1558930684450" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/qqbot" />
+    <SUITE FILE_PATH="coverage/qqproject$get_response.coverage" NAME="get_response Coverage Results" MODIFIED="1559011228099" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/qqbot" />
+    <SUITE FILE_PATH="coverage/qqproject$reply_say.coverage" NAME="reply_say Coverage Results" MODIFIED="1559005961712" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/qqbot" />
+    <SUITE FILE_PATH="coverage/qqproject$orm.coverage" NAME="orm Coverage Results" MODIFIED="1559004339001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/qqbot" />
+    <SUITE FILE_PATH="coverage/qqproject$qq_add_friends2__2_.coverage" NAME="qq_add_friends2 (2) Coverage Results" MODIFIED="1558946432154" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/qqbot" />
     <SUITE FILE_PATH="coverage/qqproject$qq_add_friends2.coverage" NAME="qq_add_friends2 Coverage Results" MODIFIED="1558927944199" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/add_qq_friends" />
   </component>
   <component name="FUSProjectUsageTrigger">
@@ -25,26 +38,31 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="csv" value="1" />
           <entry key="gitignore" value="1" />
+          <entry key="js" value="1" />
           <entry key="png" value="6" />
-          <entry key="py" value="7" />
+          <entry key="py" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Image" value="6" />
-          <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="7" />
+          <entry key="JavaScript" value="1" />
+          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="Python" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="920" />
+          <entry key="js" value="178" />
+          <entry key="py" value="1769" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="920" />
+          <entry key="JavaScript" value="178" />
+          <entry key="Python" value="1769" />
         </counts>
       </usages-collector>
     </session>
@@ -55,34 +73,22 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/qqbot/send_mail.py">
+        <entry file="file://$PROJECT_DIR$/newman/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="35" column="66" lean-forward="true" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="66" />
-              <folding>
-                <element signature="e#0#14#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/qqbot/qq_add_friends2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
-              <folding>
-                <element signature="e#25#41#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="209">
+              <caret line="114" column="22" selection-start-line="114" selection-start-column="22" selection-end-line="114" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/newman/.gitignore">
+        <entry file="file://$PROJECT_DIR$/qqbot/get_response.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+            <state relative-caret-position="223">
+              <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+              <folding>
+                <element signature="e#0#29#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -90,8 +96,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/qqbot/database.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+            <state relative-caret-position="372">
+              <caret line="15" column="7" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="7" />
               <folding>
                 <element signature="e#0#82#0" expanded="true" />
               </folding>
@@ -108,6 +114,12 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>switcher_plogin</find>
+      <find>print</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -118,8 +130,12 @@
         <option value="$PROJECT_DIR$/qqbot/__init__.py" />
         <option value="$PROJECT_DIR$/qqbot/add_qq_friends/qq_add_friends2.py" />
         <option value="$PROJECT_DIR$/qqbot/database.py" />
-        <option value="$PROJECT_DIR$/qqbot/qq_add_friends2.py" />
         <option value="$PROJECT_DIR$/newman/.gitignore" />
+        <option value="$PROJECT_DIR$/qqbot/qq_add_friends2.py" />
+        <option value="$PROJECT_DIR$/qqbot/orm.py" />
+        <option value="$PROJECT_DIR$/qqbot/reply_say.py" />
+        <option value="$PROJECT_DIR$/newman/index.js" />
+        <option value="$PROJECT_DIR$/qqbot/get_response.py" />
       </list>
     </option>
   </component>
@@ -513,6 +529,11 @@
               <item name="qqproject" type="462c0819:PsiDirectoryNode" />
               <item name="newman" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="qqproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qqproject" type="462c0819:PsiDirectoryNode" />
+              <item name="qqbot" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -544,7 +565,51 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.qq_add_friends2 (2)">
+  <component name="RunManager" selected="Python.get_response">
+    <configuration name="get_response" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="qqproject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/qqbot" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/qqbot/get_response.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="orm" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="qqproject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/qqbot" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/qqbot/orm.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="qq_add_friends2 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="qqproject" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -589,7 +654,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="qq_add_friends2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="reply_say" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="qqproject" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -597,12 +662,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/add_qq_friends" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/qqbot" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/add_qq_friends/qq_add_friends2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/qqbot/reply_say.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -612,15 +677,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.qq_add_friends2" />
       <item itemvalue="Python.qq_add_friends2 (1)" />
       <item itemvalue="Python.qq_add_friends2 (2)" />
+      <item itemvalue="Python.reply_say" />
+      <item itemvalue="Python.orm" />
+      <item itemvalue="Python.get_response" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.get_response" />
+        <item itemvalue="Python.reply_say" />
+        <item itemvalue="Python.orm" />
         <item itemvalue="Python.qq_add_friends2 (2)" />
         <item itemvalue="Python.qq_add_friends2 (1)" />
-        <item itemvalue="Python.qq_add_friends2" />
       </list>
     </recent_temporary>
   </component>
@@ -641,18 +710,18 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Favorites" sideWeight="0.5010571" side_tool="true" visible="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4989429" visible="true" weight="0.25" />
+      <window_info id="Favorites" sideWeight="0.5010571" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4989429" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.32907802" />
+      <window_info anchor="bottom" id="Version Control" weight="0.32907802" />
+      <window_info anchor="bottom" id="Python Console" weight="0.32907802" />
+      <window_info anchor="bottom" id="Terminal" weight="0.32907802" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32907802" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32907802" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32907802" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -735,40 +804,98 @@
     <entry file="file://$PROJECT_DIR$/qqbot/input.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/qqbot/database.py">
+    <entry file="file://$PROJECT_DIR$/newman/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#82#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="175">
+          <caret line="7" column="5" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/qqbot/send_mail.py">
+    <entry file="file://F:/ProgramData/Anaconda3/Lib/site-packages/selenium/webdriver/remote/webdriver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="35" column="66" lean-forward="true" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="66" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="224">
+          <caret line="786" column="43" selection-start-line="786" selection-start-column="34" selection-end-line="786" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/ProgramData/Anaconda3/Lib/site-packages/selenium/webdriver/support/wait.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="79" selection-start-line="79" selection-end-line="79" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/qqbot/qq_add_friends2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
+        <state relative-caret-position="348">
+          <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
           <folding>
             <element signature="e#25#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/newman/.gitignore">
+    <entry file="file://$PROJECT_DIR$/qqbot/mail.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        <state relative-caret-position="-225" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qqbot/reply_say.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1816">
+          <caret line="74" column="20" selection-start-line="74" selection-start-column="20" selection-end-line="74" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qqbot/send_mail.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qqbot/orm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="34" column="26" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qqbot/qq.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-525" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qqbot/database.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="15" column="7" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#82#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/newman/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="114" column="22" selection-start-line="114" selection-start-column="22" selection-end-line="114" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qqbot/get_response.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
