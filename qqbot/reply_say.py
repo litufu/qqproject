@@ -5,19 +5,26 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.action_chains import ActionChains
 import json
-from selenium.webdriver.support.select import Select
 from multiprocessing import Pool
 from database import User, Base
-from session import session
+from session import session,DBSession
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 
+engine = create_engine('sqlite:///qq.sqlite?check_same_thread=False')
+Base.metadata.bind = engine
 
 class QQZoneSpider(object):
-    def __init__(self, username, password,content):
+    def __init__(self, username, password,length,no):
         self.username = username
         self.password = password
-        self.content = content
+        self.content = "高考志愿模拟填报选【格物水滴APP】,可即时查看你在所报考学校和专业的成绩排名，并且可以和所有报考者沟通交流。"
+        self.length = length
+        self.no = no
+        DBSession = sessionmaker(bind=engine)
+        session = DBSession()
+        self.session = session
         chrome_options = Options()
         # chrome_options.add_argument('--headless')
         chrome_options.add_argument('--no-sandbox')
@@ -56,7 +63,7 @@ class QQZoneSpider(object):
             for cookie in cookies:
                 self.driver.add_cookie(cookie)
             self.driver.refresh()
-            time.sleep(8)
+            time.sleep(3)
         except Exception as e:
             print(e)
 
@@ -75,130 +82,100 @@ class QQZoneSpider(object):
         psw.clear()
         psw.send_keys(self.password)
         self.driver.find_element_by_id("login_button").click()
-        time.sleep(30)
+        time.sleep(10)
         self.save_cookie()
 
-    def get_code(self):
-        setting = self.driver.find_element_by_id('tb_setting_li')
-        actions = ActionChains(self.driver)
-        time.sleep(3)
-        actions.move_to_element(setting).perform()
-        time.sleep(3)
-        modify = self.driver.find_element_by_link_text('修改资料')
-        modify.click()
-        time.sleep(3)
-        self.driver.switch_to.frame('ttinfo')
-        county_select = self.driver.find_element_by_id('addslt_c_0')
-        county_list = county_select.find_elements_by_tag_name('option')
-        for option in county_list:
-            value = option.get_attribute("value")
-            text = option.text
-            print("Value is: " + value)
-            print("Text is:" + text)
-        Select(county_select).select_by_value("1")
-        time.sleep(3)
-        province_select = self.driver.find_element_by_id('addslt_s_0')
-        province_list = province_select.find_elements_by_tag_name('option')
-        result = []
-        for option in province_list:
-            province_value = option.get_attribute("value")
-            province_text = option.text
-            print("province Value is: " + province_value )
-            print("province Text is:" + province_text)
-            Select(province_select).select_by_value(province_value)
-            time.sleep(3)
-            city_select = self.driver.find_element_by_id('addslt_cty_0')
-            city_list = city_select.find_elements_by_tag_name('option')
-            cities = []
-            for city_option in city_list:
-                city_value = city_option.get_attribute("value")
-                city_text = city_option.text
-                cities.append({'code':city_value,'name':city_text})
-                print("city Value is: " + city_value)
-                print("city Text is:" + city_text)
-            result.append({"code": province_value, 'name': province_text, 'cities': cities})
-        file = open('area.json', 'w', encoding='utf-8')
-        print(result)
-        json.dump(result, file)
-        file.close()
-
-    def reply(self, qq):
+    def reply(self, qq,user):
         self.driver.get(url='https://user.qzone.qq.com/{}'.format(qq))
         time.sleep(4)
         html = self.driver.page_source
-        friendship_promote_layer = self.driver.find_elements_by_id('friendship_promote_layer')
-        if html.find('申请访问') != -1:  # 利用用户名判断是否登陆
-            # 没登录 ,则手动登录
-            self.driver.find_element_by_link_text('申请访问').click()
-            time.sleep(2)
-            text_area = self.driver.find_element_by_id('msg-area')
-            text_area.clear()
-            text_area.send_keys(self.content)
-            self.driver.find_element_by_class_name('qz_dialog_layer_sub').click()
-            print('需要验证无法登陆')
-            return
-        elif len(friendship_promote_layer) > 0:
-            print('遮罩层')
-            friendship_promote_layer[0].find_element_by_class_name('btn-fs-sure').click()
+        try:
+            friendship_promote_layer = self.driver.find_elements_by_id('friendship_promote_layer')
+            if len(friendship_promote_layer) > 0:
+                print('遮罩层')
+                friendship_promote_layer[0].find_element_by_class_name('btn-fs-sure').click()
+            if html.find('申请访问') != -1:  # 利用用户名判断是否登陆
+                # 没登录 ,则手动登录
+                self.driver.find_element_by_link_text('申请访问').click()
+                time.sleep(2)
+                text_area = self.driver.find_element_by_id('msg-area')
+                text_area.clear()
+                text_area.send_keys(self.content)
+                self.driver.find_element_by_class_name('qz_dialog_layer_sub').click()
+                print('需要验证无法登陆')
+            else:
+                self.driver.switch_to.frame('QM_Feeds_Iframe')
+                WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//a[@class='c_tx3']")))
+                self.driver.find_element_by_xpath("//a[@class='c_tx3']").click()
+                time.sleep(2)
+                boxes = self.driver.find_elements_by_class_name('comment-box-wrap')
+                if len(boxes) > 0:
+                    input_content = boxes[0].find_element_by_class_name('textinput')
+                    self.driver.execute_script("arguments[0].innerHTML='{}'".format(self.content), input_content)
+                    boxes[0].find_element_by_class_name('btn-post').click()
 
-        self.driver.switch_to.frame('QM_Feeds_Iframe')
-        WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//a[@class='c_tx3']")))
-        self.driver.find_element_by_xpath("//a[@class='c_tx3']").click()
-        time.sleep(3)
-        boxes = self.driver.find_elements_by_class_name('comment-box-wrap')
-        if len(boxes) > 0:
-            input_content = boxes[0].find_element_by_class_name('textinput')
-            self.driver.execute_script("arguments[0].innerHTML='{}'".format(self.content), input_content)
-            boxes[0].find_element_by_class_name('btn-post').click()
+        except Exception as e:
+            print(e)
+        finally:
+            user.send = True
+            self.session.commit()
+            print('{}空间评价完成'.format(user.qq))
+
+    def replay_all(self):
+        users = session.query(User).filter(User.send == False).all()
+        users_length = len(users)
+        start = int(users_length * (self.no/ self.length))
+        end = int(users_length * ((self.no + 1) / self.length))
+        for user in users[start:end]:
+            if user.qq == "0":
+                continue
+            self.reply(user.qq,user)
 
 
-def send_all(no, senders_length, my_sender):
-    users = session.query(User).filter(User.send == False).all()
-    users_length = len(users)
-    start = int(users_length * (no / senders_length))
-    end = int(users_length * ((no + 1) / senders_length))
-    for user in users[start:end]:
-        if user.qq == "0":
-            continue
-        my_sender.reply(user.qq)
-        user.send = True
-        session.commit()
-        time.sleep(3)
-        print('{}空间评价完成'.format(user.qq))
-
-
-def pool_send():
-    senders = [{
-        'name': '3468350745',
-        'password': "puDqax43LYwX9iC",
-    },
-    ]
-    cnt = "高考志愿模拟填报选【格物水滴APP】,可即时查看你在所报考学校和专业的成绩排名，并且可以和所有报考者沟通交流。"
-    length = len(senders)
-    p = Pool(length)
-    for i, sender_obj in enumerate(senders):
-        qqzone = QQZoneSpider(username=sender_obj['name'], password=sender_obj['password'], content=cnt)
-        p.apply_async(send_all, args=(i, length, qqzone))
-    print('Waiting for all subprocesses done...')
-    p.close()
-    p.join()
-    print('All subprocesses done.')
-
+def send(qquser,length,i):
+    print(qquser['name'])
+    try:
+        weibo = QQZoneSpider(password=qquser['password'], username=qquser['name'], length=length, no=i)
+        weibo.replay_all()
+    except Exception as e:
+        print(e)
+        time.sleep(100)
+        send()
 
 if __name__ == '__main__':
-    # pool_send()
-    cnt = "高考志愿模拟填报选【格物水滴APP】,可即时查看你在所报考学校和专业的成绩排名，并且可以和所有报考者沟通交流。"
-    # qqzone = QQZoneSpider(username="3468350745",password="puDqax43LYwX9iC",content=cnt)
-    qqzone = QQZoneSpider(username="2837484507",password="UZ5tgxDVmuCxW58",content=cnt)
-    qqzone.get_code()
-    # users = session.query(User).filter(User.send == False).all()
-    # for user in users:
-    #     try:
-    #         qqzone.reply(user.qq)
-    #     except Exception as e:
-    #         print(e)
-    #     user.send = True
-    #     session.commit()
-    #     time.sleep(2)
-    #     print('{}空间评价完成'.format(user.qq))
+    while True:
+        qqusers = [{
+            'name': '3468350745',
+            'password': "puDqax43LYwX9iC",
+        },
+            {
+                'name': '2837484507',
+                'password': "UZ5tgxDVmuCxW58",
+            },
+            {
+                'name': '3325987839',
+                'password': "mimabeidao110",
+            },
+            {
+                'name': '1697351407',
+                'password': "mimabeidao110",
+            },
+            {
+                'name': '3114599890',
+                'password': "mimabeidao110",
+            },
+            {
+                'name': '1907481433',
+                'password': "mimabeidao110",
+            },
+        ]
+        length = len(qqusers)
+        p = Pool(length)
 
+        for i, qquser in enumerate(qqusers):
+            p.apply_async(send, args=(qquser, length, i))
+        print('Waiting for all subprocesses done...')
+        p.close()
+        p.join()
+        print('All subprocesses done.')
+        time.sleep(300)
